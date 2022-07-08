@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kakao_chat/kakao_chat_screen.dart';
+import 'package:kakao_chat/kakaochat_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
