@@ -63,8 +63,17 @@ class KakaoChatScreen extends StatelessWidget {
 
   Widget _bottomNavigationBar() {
     return Container(
-      color: Colors.green,
       height: 60,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(color: Colors.red, width: 20, height: 20),
+          Container(color: Colors.orange, width: 20, height: 20),
+          Container(color: Colors.yellow, width: 20, height: 20),
+          Container(color: Colors.green, width: 20, height: 20),
+          Container(color: Colors.blue, width: 20, height: 20),
+        ],
+      ),
     );
   }
 
