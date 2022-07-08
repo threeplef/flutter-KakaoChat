@@ -11,18 +11,25 @@ class KakaoChatScreen extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text('채팅', style: TextStyle(color: Colors.grey, fontSize: 18, fontWeight: FontWeight.bold)),
+              child: Text('채팅',
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold)),
             ),
             Row(
               children: [
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Text('오픈채팅', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  child: Text('오픈채팅',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
                 Container(
                   width: 4,
                   height: 4,
-                  decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.redAccent),
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.redAccent),
                 ),
               ],
             ),
@@ -36,7 +43,8 @@ class KakaoChatScreen extends StatelessWidget {
         children: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.chat)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.music_note_rounded)),
+          IconButton(
+              onPressed: () {}, icon: const Icon(Icons.music_note_rounded)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
         ],
       );
@@ -62,16 +70,52 @@ class KakaoChatScreen extends StatelessWidget {
   }
 
   Widget _bottomNavigationBar() {
-    return Container(
+    return SizedBox(
       height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(color: Colors.red, width: 20, height: 20),
-          Container(color: Colors.orange, width: 20, height: 20),
-          Container(color: Colors.yellow, width: 20, height: 20),
-          Container(color: Colors.green, width: 20, height: 20),
-          Container(color: Colors.blue, width: 20, height: 20),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+          Stack(
+            children: [
+              IconButton(onPressed: () {}, icon: const Icon(Icons.chat)),
+              Positioned(
+                top: 4,
+                right: 0,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.redAccent),
+                  child: const Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 2.0, horizontal: 6.0),
+                    child: Text(
+                      '37',
+                      style: TextStyle(fontSize: 12, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.remove_red_eye_outlined)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_bag)),
+          Stack(
+            children: [
+              IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+              Positioned(
+                  top: 4,
+                  right: 10,
+                  child: Container(
+                    width: 4,
+                    height: 4,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.redAccent),
+                  )),
+            ],
+          ),
         ],
       ),
     );
