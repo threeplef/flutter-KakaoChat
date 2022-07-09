@@ -78,23 +78,14 @@ class KakaoChatScreen extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                    child: Container(
-                  width: 40,
-                  height: 30,
-                  color: Colors.green,
-                )),
-                Container(
-                  width: 40,
-                  height: 30,
-                  color: Colors.orange,
-                ),
-                Container(
-                  width: 40,
-                  height: 30,
-                  color: Colors.purple,
-                ),
+                    child:
+                        Container(width: 40, height: 30, color: Colors.green)),
+                Container(width: 40, height: 30, color: Colors.orange),
+                Container(width: 40, height: 30, color: Colors.purple),
               ],
             ),
+            const SizedBox(height: 8),
+            Container(height: 30, color: Colors.brown),
           ],
         ),
       );
