@@ -61,10 +61,73 @@ class KakaoChatScreen extends StatelessWidget {
     );
   }
 
+  Widget _listItem() {
+    Widget _left() {
+      return Container(
+        width: 60,
+        height: 60,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8), color: Colors.yellow),
+      );
+    }
+
+    Widget _center() {
+      return Expanded(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                    child: Container(
+                  width: 40,
+                  height: 30,
+                  color: Colors.green,
+                )),
+                Container(
+                  width: 40,
+                  height: 30,
+                  color: Colors.orange,
+                ),
+                Container(
+                  width: 40,
+                  height: 30,
+                  color: Colors.purple,
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget _right() {
+      return Column(
+        children: [
+          Container(width: 50, height: 30, color: Colors.red),
+          Container(width: 50, height: 30, color: Colors.blue),
+        ],
+      );
+    }
+
+    return Row(
+      children: [
+        _left(),
+        const SizedBox(width: 16),
+        _center(),
+        const SizedBox(width: 16),
+        _right()
+      ],
+    );
+  }
+
   Widget _contents() {
     return Expanded(
-      child: Container(
-        color: Colors.blue,
+      child: ListView.separated(
+        itemBuilder: (BuildContext context, int index) => _listItem(),
+        itemCount: 20,
+        padding: const EdgeInsets.all(16.0),
+        separatorBuilder: (BuildContext context, int index) =>
+            const Divider(height: 16),
       ),
     );
   }
