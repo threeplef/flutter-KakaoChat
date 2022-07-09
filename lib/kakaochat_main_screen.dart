@@ -42,10 +42,10 @@ class KakaoChatScreen extends StatelessWidget {
       return Row(
         children: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.chat)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.messenger_outline_rounded)),
           IconButton(
-              onPressed: () {}, icon: const Icon(Icons.music_note_rounded)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+              onPressed: () {}, icon: const Icon(Icons.music_note_outlined)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined)),
         ],
       );
     }
