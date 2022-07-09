@@ -160,10 +160,10 @@ class KakaoChatScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.perm_identity_rounded)),
           Stack(
             children: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.chat)),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.messenger_outline_rounded)),
               Positioned(
                 top: 4,
                 right: 0,
@@ -186,7 +186,7 @@ class KakaoChatScreen extends StatelessWidget {
           IconButton(
               onPressed: () {},
               icon: const Icon(Icons.remove_red_eye_outlined)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_bag)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_bag_outlined)),
           Stack(
             children: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
