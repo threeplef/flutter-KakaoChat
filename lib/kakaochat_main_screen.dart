@@ -63,29 +63,47 @@ class KakaoChatScreen extends StatelessWidget {
 
   Widget _listItem() {
     Widget _left() {
-      return Container(
+      String image =
+          'https://i.pinimg.com/564x/bf/32/f0/bf32f09905b7c724331e25782de0b5d8.jpg';
+      return SizedBox(
         width: 60,
         height: 60,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: Colors.yellow),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: Image.network(image, fit: BoxFit.cover),
+        ),
       );
     }
 
     Widget _center() {
+      String text = '안녕하세요 반갑습니다 플러터로 만든 카카오톡입니다';
+
       return Expanded(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              children: [
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
                 Expanded(
-                    child:
-                        Container(width: 40, height: 30, color: Colors.green)),
-                Container(width: 40, height: 30, color: Colors.orange),
-                Container(width: 40, height: 30, color: Colors.purple),
+                    child: Text(
+                  'Flutter 개발 천재',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                )),
+                Text(
+                  '264',
+                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                ),
+                SizedBox(width: 8),
+                Icon(Icons.notifications_off, color: Colors.grey, size: 14),
               ],
             ),
-            const SizedBox(height: 8),
-            Container(height: 30, color: Colors.brown),
+            const SizedBox(height: 3),
+            Text(text,
+                style: const TextStyle(color: Colors.grey, fontSize: 14),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis),
           ],
         ),
       );
@@ -93,9 +111,22 @@ class KakaoChatScreen extends StatelessWidget {
 
     Widget _right() {
       return Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Container(width: 50, height: 30, color: Colors.red),
-          Container(width: 50, height: 30, color: Colors.blue),
+          const Text('오전 11:37',
+              style: TextStyle(fontSize: 13, color: Colors.grey)),
+          const SizedBox(height: 10),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.redAccent),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 7.0, vertical: 4.0),
+              child: Text('300+',
+                  style: TextStyle(fontSize: 13, color: Colors.white)),
+            ),
+          ),
+          const SizedBox(height: 12),
         ],
       );
     }
@@ -103,9 +134,9 @@ class KakaoChatScreen extends StatelessWidget {
     return Row(
       children: [
         _left(),
-        const SizedBox(width: 16),
+        const SizedBox(width: 18),
         _center(),
-        const SizedBox(width: 16),
+        const SizedBox(width: 15),
         _right()
       ],
     );
