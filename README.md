@@ -1,4 +1,4 @@
-# kakao_chat
+# flutter-KakaoChat
 
 A new Flutter project.
 
